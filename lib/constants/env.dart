@@ -19,6 +19,7 @@ class Env {
     debugShowCheckedModeBanner: false,
     debugShowMaterialGrid: false,
     debugApiClient: true,
+    apiBaseUrl: '',
   );
 
   static final EnvData prod = EnvData(
@@ -26,6 +27,7 @@ class Env {
     debugShowCheckedModeBanner: false,
     debugShowMaterialGrid: false,
     debugApiClient: false,
+    apiBaseUrl: '',
   );
 }
 
@@ -34,12 +36,14 @@ class EnvData {
   final bool debugShowCheckedModeBanner;
   final bool debugShowMaterialGrid;
   final bool debugApiClient;
+  final String apiBaseUrl;
 
   EnvData({
     required this.debug,
     required this.debugShowCheckedModeBanner,
     required this.debugShowMaterialGrid,
     required this.debugApiClient,
+    required this.apiBaseUrl,
   });
 }
 

@@ -30,11 +30,11 @@ Future<T?> navigateToRoute<T>({
     return null;
   }
 
-  if (route.routeName == HomeScreenRoute.name) {
-    var routeArgs = const HomeScreenRouteArgs();
+  if (route.routeName == HomeRoute.name) {
+    var routeArgs = const HomeRouteArgs();
 
-    if (route.args is HomeScreenRouteArgs) {
-      routeArgs = route.args as HomeScreenRouteArgs;
+    if (route.args is HomeRouteArgs) {
+      routeArgs = route.args as HomeRouteArgs;
     }
 
     return navigateToHomeScreen<T>(routeArgs: routeArgs);
@@ -46,11 +46,11 @@ Future<T?> navigateToRoute<T>({
 Future<T?> navigateToRouteAndReplace<T>(
   PageRouteInfo route,
 ) async {
-  if (route.routeName == HomeScreenRoute.name) {
-    var routeArgs = const HomeScreenRouteArgs();
+  if (route.routeName == HomeRoute.name) {
+    var routeArgs = const HomeRouteArgs();
 
-    if (route.args is HomeScreenRouteArgs) {
-      routeArgs = route.args as HomeScreenRouteArgs;
+    if (route.args is HomeRouteArgs) {
+      routeArgs = route.args as HomeRouteArgs;
     }
 
     return navigateToHomeScreen<T>(routeArgs: routeArgs);
@@ -80,10 +80,10 @@ bool canPopCurrentRoute<T>() {
 
 /// navigating to homescreen should clear the navigation stack and start again
 Future<T?> navigateToHomeScreen<T>({
-  HomeScreenRouteArgs? routeArgs,
+  HomeRouteArgs? routeArgs,
 }) async {
   return navigateToRouteAndRemoveUntil<T>(
-    HomeScreenRoute(
+    HomeRoute(
       dummyValue: routeArgs?.dummyValue,
     ),
   );

@@ -76,7 +76,7 @@ class _HomeScreenState extends SfWidget {
               onPressed: () {
                 navigateToRoute(
                   context: context,
-                  route: PageNotFoundScreenRoute(routeName: ''),
+                  route: PageNotFoundRoute(routeName: ''),
                 );
               },
               child: const Text('404'),

@@ -9,7 +9,7 @@ final GetIt getIt = GetIt.instance;
   asExtension: true,
   initializerName: 'init',
 )
-GetIt getItInit({
+Future<GetIt> getItInit({
   String? env,
   EnvironmentFilter? environmentFilter,
 }) {
