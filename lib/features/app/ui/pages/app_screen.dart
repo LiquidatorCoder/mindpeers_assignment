@@ -1,6 +1,5 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
 
 import 'package:mindpeers/common/router/root_router.dart';
 import 'package:mindpeers/constants/env.dart';
@@ -29,11 +28,21 @@ class AppScreen extends StatelessWidget {
 
         return nativeNavigator!;
       },
+      theme: ThemeData(
+        useMaterial3: true,
+        colorScheme: const ColorScheme.dark().copyWith(
+          primary: const Color(0xFF16A9B1),
+          secondary: const Color(0xFFFFB736),
+        ),
+        scaffoldBackgroundColor: const Color(0xFF171717),
+      ),
       title: Strings.appName,
       routeInformationParser: rootRouter.defaultRouteParser(),
       routerDelegate: AutoRouterDelegate(
         rootRouter,
-        navigatorObservers: () => [AutoRouteObserver()],
+        navigatorObservers: () => [
+          AutoRouteObserver(),
+        ],
       ),
     );
   }

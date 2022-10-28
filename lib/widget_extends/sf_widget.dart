@@ -16,9 +16,11 @@ abstract class SfWidget<S extends StatefulWidget> extends State<S>
   void didChangeDependencies() {
     super.didChangeDependencies();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      onWidgetUpdate();
-    });
+    WidgetsBinding.instance.addPostFrameCallback(
+      (_) {
+        onWidgetUpdate();
+      },
+    );
   }
 
   @protected

@@ -12,16 +12,16 @@ class Env {
 
   static final bool isTest = Platform.environment.containsKey('FLUTTER_TEST');
 
-  _EnvData get config => isRelease ? prod : dev;
+  EnvData get config => isRelease ? prod : dev;
 
-  static final _EnvData dev = _EnvData(
+  static final EnvData dev = EnvData(
     debug: true,
     debugShowCheckedModeBanner: false,
     debugShowMaterialGrid: false,
     debugApiClient: true,
   );
 
-  static final _EnvData prod = _EnvData(
+  static final EnvData prod = EnvData(
     debug: false,
     debugShowCheckedModeBanner: false,
     debugShowMaterialGrid: false,
@@ -29,13 +29,13 @@ class Env {
   );
 }
 
-class _EnvData {
+class EnvData {
   final bool debug;
   final bool debugShowCheckedModeBanner;
   final bool debugShowMaterialGrid;
   final bool debugApiClient;
 
-  _EnvData({
+  EnvData({
     required this.debug,
     required this.debugShowCheckedModeBanner,
     required this.debugShowMaterialGrid,

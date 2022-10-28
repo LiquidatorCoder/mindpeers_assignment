@@ -16,26 +16,36 @@ Future<void> main() async {
   // register all dependecy injection
   getItInit(env: Environment.dev);
 
-  await SystemChrome.setPreferredOrientations([
-    DeviceOrientation.portraitUp,
-    DeviceOrientation.portraitDown,
-  ]);
+  await SystemChrome.setPreferredOrientations(
+    [
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ],
+  );
 
-  mainContext.onReactionError((_, rxn) {
-    log.error(
-      'A mobx reaction error occured.',
-      error: rxn.errorValue!.exception,
-    );
-  });
+  mainContext.onReactionError(
+    (_, reactiion) {
+      log.error(
+        'A mobx reaction error occured.',
+        error: reactiion.errorValue!.exception,
+      );
+    },
+  );
 
-  runApp(const AppScreen());
+  runApp(
+    const AppScreen(),
+  );
 
-  Isolate.current.addErrorListener(RawReceivePort((pair) async {
-    final errorAndStacktrace = pair as List;
+  Isolate.current.addErrorListener(
+    RawReceivePort(
+      (pair) async {
+        final errorAndStacktrace = pair as List;
 
-    log.error(
-      'An error was captured by main.Isolate.current.addErrorListener',
-      error: errorAndStacktrace.first,
-    );
-  }).sendPort);
+        log.error(
+          'An error was captured by main.Isolate.current.addErrorListener',
+          error: errorAndStacktrace.first,
+        );
+      },
+    ).sendPort,
+  );
 }

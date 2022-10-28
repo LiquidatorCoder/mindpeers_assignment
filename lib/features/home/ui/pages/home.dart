@@ -59,7 +59,7 @@ class _HomeScreenState extends SfWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Cred Test'),
+        title: const Text('MindPeers'),
       ),
       body: Center(
         child: Column(

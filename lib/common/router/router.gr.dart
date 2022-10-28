@@ -49,14 +49,8 @@ class RootRouter extends _i3.RootStackRouter {
   @override
   List<_i3.RouteConfig> get routes => [
         _i3.RouteConfig(
-          '/#redirect',
-          path: '/',
-          redirectTo: '/homeScreen',
-          fullMatch: true,
-        ),
-        _i3.RouteConfig(
           HomeScreenRoute.name,
-          path: '/homeScreen',
+          path: '/',
         ),
         _i3.RouteConfig(
           PageNotFoundScreenRoute.name,
@@ -73,7 +67,7 @@ class HomeScreenRoute extends _i3.PageRouteInfo<HomeScreenRouteArgs> {
     String? dummyValue,
   }) : super(
           HomeScreenRoute.name,
-          path: '/homeScreen',
+          path: '/',
           args: HomeScreenRouteArgs(
             key: key,
             dummyValue: dummyValue,
