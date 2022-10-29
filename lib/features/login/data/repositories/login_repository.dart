@@ -22,10 +22,6 @@ class LoginRepository {
     return _loginRemoteDataSource.postLogin(params);
   }
 
-  Future<DC<Exception, AuthenticationModel?>> getAuthenticationData() async {
-    return getDeviceAuthenticationData();
-  }
-
   Future<DC<Exception, AuthenticationModel?>>
       getDeviceAuthenticationData() async {
     return _loginLocalDataSource.getAuthenticationData();

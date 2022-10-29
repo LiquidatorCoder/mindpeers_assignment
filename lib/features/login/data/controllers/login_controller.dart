@@ -37,11 +37,6 @@ class LoginController {
     );
   }
 
-  // todo init -> fetch token from url -> validate -> refresh
-  Future<DC<Exception, AuthenticationModel?>> getAuthenticationData() async {
-    return _loginRepository.getAuthenticationData();
-  }
-
   Future<DC<Exception, AuthenticationModel?>>
       getDeviceAuthenticationData() async {
     return _loginRepository.getDeviceAuthenticationData();

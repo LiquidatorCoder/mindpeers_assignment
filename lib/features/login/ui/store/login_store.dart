@@ -72,7 +72,7 @@ abstract class _LoginStoreBase with Store {
   @action
   Future<void> getAuthentication(BuildContext context) async {
     isLoggedInStatus = StateStatus.loading;
-    final loginData = await loginController.getAuthenticationData();
+    final loginData = await loginController.getDeviceAuthenticationData();
     isLoggedInStatus = StateStatus.success;
 
     loginData.pick(
