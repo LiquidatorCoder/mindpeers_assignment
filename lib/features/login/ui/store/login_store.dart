@@ -114,7 +114,7 @@ abstract class _LoginStoreBase with Store {
       },
       onData: (data) {
         if (redirectToHomeScreen) {
-          navigateToHomeScreen(routeArgs: null);
+          navigateToHomeScreen();
         }
 
         isLoggedIn = false;

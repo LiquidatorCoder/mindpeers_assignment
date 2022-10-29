@@ -1,21 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mindpeers/common/helpers/navigation_helper.dart';
 import 'package:mindpeers/common/themes/colors.dart';
 import 'package:mindpeers/utils/common/store_helper.dart';
 import 'package:mindpeers/widget_extends/sf_widget.dart';
 import 'package:mindpeers/widgets/nice%20button/nice_button.dart';
 import 'package:mobx/mobx.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class TestScreen extends StatefulWidget {
+  const TestScreen({Key? key}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => _HomeScreenState();
+  State<StatefulWidget> createState() => _TestScreenState();
 }
 
-class _HomeScreenState extends SfWidget {
+class _TestScreenState extends SfWidget {
   late final List<ReactionDisposer> _disposers;
 
   @override
@@ -42,16 +41,20 @@ class _HomeScreenState extends SfWidget {
     return Scaffold(
       body: Stack(
         children: [
-          // top image
-          Padding(
-            padding: EdgeInsets.only(
-              top: MediaQuery.of(context).padding.top +
-                  MediaQuery.of(context).size.height * 0.1,
-            ),
+          // bottom image
+          Align(
+            alignment: Alignment.bottomCenter,
             child: SvgPicture.asset(
               'assets/images/mountain-withball.svg',
               fit: BoxFit.cover,
               width: MediaQuery.of(context).size.width,
+            ),
+          ),
+          Positioned(
+            top: 24 + MediaQuery.of(context).padding.top,
+            child: SizedBox(
+              width: MediaQuery.of(context).size.width,
+              child: const LinearProgressIndicator(),
             ),
           ),
 
@@ -62,30 +65,20 @@ class _HomeScreenState extends SfWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Spacer(),
+                SizedBox(
+                  height: 84 + MediaQuery.of(context).padding.top,
+                ),
                 Text(
-                  'MindPeers Signature Mental Strength Test',
+                  'Which statements best correspond to your career goals:',
                   style: TextStyle(
                     color: AppColors.white,
-                    fontSize: 28,
+                    fontSize: 21,
                     fontWeight: FontWeight.w800,
                   ),
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(
-                  height: 12,
-                ),
-                Text(
-                  'Discover your strengths and identify growth areas in under four minutes.',
-                  textAlign: TextAlign.center,
-                  style: GoogleFonts.openSans(
-                    color: AppColors.white.withOpacity(0.8),
-                    fontSize: 15,
-                    fontWeight: FontWeight.normal,
-                  ),
-                ),
-                const SizedBox(
-                  height: 56,
+                  height: 48,
                 ),
                 // Elevated button
                 NiceButton(
@@ -93,10 +86,6 @@ class _HomeScreenState extends SfWidget {
                   stretch: false,
                   width: MediaQuery.of(context).size.width - 80,
                   onTap: (_) {
-                    navigateToNamedRoute(
-                      context: context,
-                      routeName: '/test-screen',
-                    );
                     return;
                   },
                   startColor: AppColors.white,
