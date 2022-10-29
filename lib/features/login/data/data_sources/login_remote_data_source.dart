@@ -15,29 +15,12 @@ class LoginRemoteDataSource {
     PostLoginRequestModel params,
   ) async {
     try {
-      final response = await _apiClient.post(
-        'api/v1/users/login',
-        params,
-      );
+      // Post login data to server
 
       return DC.data(
-        PostLoginResponseModel.fromJson(response.data as Map<String, dynamic>),
-      );
-    } on Exception catch (e) {
-      return DC.error(
-        e,
-      );
-    }
-  }
-
-  Future<DC<Exception, UserModel>> getLogin() async {
-    try {
-      final response = await _apiClient.get('api/v1/users/getLogin');
-
-      return DC.data(
-        UserModel.fromJson(
-          response.data as Map<String, dynamic>,
-        ),
+        PostLoginResponseModel.fromJson(const {
+          'token_id': 'token',
+        }),
       );
     } on Exception catch (e) {
       return DC.error(

@@ -78,7 +78,6 @@ extension GetItInjectableX on _i1.GetIt {
     gh.lazySingleton<_i17.LoginRepository>(() => _i17.LoginRepository(
           get<_i15.LoginLocalDataSource>(),
           get<_i16.LoginRemoteDataSource>(),
-          get<_i9.NetworkInfo>(),
         ));
     gh.lazySingleton<_i18.LoginController>(
         () => _i18.LoginController(get<_i17.LoginRepository>()));

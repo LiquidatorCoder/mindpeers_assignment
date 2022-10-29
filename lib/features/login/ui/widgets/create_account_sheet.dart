@@ -4,8 +4,11 @@ import 'package:mindpeers/widgets/nice%20button/nice_button.dart';
 
 class CreateAccountSheet extends StatelessWidget {
   const CreateAccountSheet({
+    required this.onLogin,
     Key? key,
   }) : super(key: key);
+
+  final VoidCallback onLogin;
 
   @override
   Widget build(BuildContext context) {
@@ -45,6 +48,7 @@ class CreateAccountSheet extends StatelessWidget {
               stretch: false,
               width: MediaQuery.of(context).size.width - 80,
               onTap: (_) {
+                onLogin();
                 return;
               },
               startColor: AppColors.white,
@@ -69,6 +73,7 @@ class CreateAccountSheet extends StatelessWidget {
               stretch: false,
               width: MediaQuery.of(context).size.width - 80,
               onTap: (_) {
+                onLogin();
                 return;
               },
               startColor: AppColors.black,
@@ -93,6 +98,7 @@ class CreateAccountSheet extends StatelessWidget {
               stretch: false,
               width: MediaQuery.of(context).size.width - 80,
               onTap: (_) {
+                onLogin();
                 return;
               },
               startColor: AppColors.primaryColor,

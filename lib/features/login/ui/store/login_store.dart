@@ -49,7 +49,7 @@ abstract class _LoginStoreBase with Store {
         }
       },
       onData: (data) {
-        if (!data.isAuthenticated) {
+        if (data.tokenId == null) {
           isLoggedIn = false;
 
           return;

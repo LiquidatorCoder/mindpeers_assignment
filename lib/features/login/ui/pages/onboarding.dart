@@ -11,7 +11,6 @@ import 'package:mindpeers/widget_extends/sf_widget.dart';
 import 'package:mindpeers/widgets/nice%20button/nice_button.dart';
 import 'package:mobx/mobx.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
-// import 'package:cached_network_image/cached_network_image.dart';
 
 class OnboardingScreen extends StatefulWidget {
   final PageRouteInfo? redirectOnLogin;
@@ -105,7 +104,14 @@ class _OnboardingScreenState extends SfWidget<OnboardingScreen> {
                   onTap: (_) {
                     return showCupertinoModalBottomSheet(
                       context: context,
-                      builder: (context) => const CreateAccountSheet(),
+                      builder: (context) => CreateAccountSheet(
+                        onLogin: () => doLogin(
+                          const PostLoginRequestModel(
+                            username: 'username',
+                            password: 'password',
+                          ),
+                        ),
+                      ),
                     );
                   },
                   startColor: AppColors.white,
