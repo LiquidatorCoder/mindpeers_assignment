@@ -15,7 +15,7 @@ class RouterAuthGuard extends AutoRouteGuard {
 
     if (deviceAuthenticationData.error is UnauthenticatedException) {
       await router.push(
-        LoginRoute(
+        OnboardingRoute(
           redirectOnLogin: resolver.route.toPageRouteInfo(),
         ),
       );

@@ -27,6 +27,9 @@ dependencies:
   pretty_dio_logger: ^1.2.0-beta-1
   data_connection_checker_nulls: ^0.0.2
   json_annotation: ^4.7.0
+  cached_network_image: ^3.2.2
+  pixel_perfect: ^1.1.1
+  vibration: ^1.7.6
 
 dev_dependencies:
   flutter_test:

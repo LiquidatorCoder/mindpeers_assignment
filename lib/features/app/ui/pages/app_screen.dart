@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 import 'package:mindpeers/common/router/root_router.dart';
+import 'package:mindpeers/common/themes/colors.dart';
 import 'package:mindpeers/constants/env.dart';
 import 'package:mindpeers/constants/strings.dart';
 
@@ -30,11 +31,12 @@ class AppScreen extends StatelessWidget {
       },
       theme: ThemeData(
         useMaterial3: true,
+        fontFamily: 'Gilroy',
         colorScheme: const ColorScheme.dark().copyWith(
-          primary: const Color(0xFF16A9B1),
-          secondary: const Color(0xFFFFB736),
+          primary: AppColors.primaryColor,
+          secondary: AppColors.secondaryColor,
         ),
-        scaffoldBackgroundColor: const Color(0xFF171717),
+        scaffoldBackgroundColor: AppColors.scaffoldBackgroundColor,
       ),
       title: Strings.appName,
       routeInformationParser: rootRouter.defaultRouteParser(),
