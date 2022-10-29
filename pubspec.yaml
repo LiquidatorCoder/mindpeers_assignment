@@ -30,6 +30,7 @@ dependencies:
   cached_network_image: ^3.2.2
   pixel_perfect: ^1.1.1
   vibration: ^1.7.6
+  modal_bottom_sheet: ^2.1.2
 
 dev_dependencies:
   flutter_test:

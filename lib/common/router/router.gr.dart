@@ -13,6 +13,7 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i5;
 import 'package:flutter/material.dart' as _i6;
+import 'package:mindpeers/common/router/router.dart' as _i8;
 import 'package:mindpeers/common/router/router_auth_guard.dart' as _i7;
 import 'package:mindpeers/features/home/ui/pages/home.dart' as _i1;
 import 'package:mindpeers/features/login/ui/pages/login.dart' as _i2;
@@ -33,42 +34,54 @@ class RootRouter extends _i5.RootStackRouter {
     HomeRoute.name: (routeData) {
       final args =
           routeData.argsAs<HomeRouteArgs>(orElse: () => const HomeRouteArgs());
-      return _i5.AdaptivePage<dynamic>(
+      return _i5.CustomPage<dynamic>(
         routeData: routeData,
         child: _i1.HomeScreen(
           key: args.key,
           dummyValue: args.dummyValue,
         ),
+        customRouteBuilder: _i8.cupertinoModalRouteBuilder,
+        opaque: true,
+        barrierDismissible: false,
       );
     },
     LoginRoute.name: (routeData) {
       final args = routeData.argsAs<LoginRouteArgs>();
-      return _i5.AdaptivePage<dynamic>(
+      return _i5.CustomPage<dynamic>(
         routeData: routeData,
         child: _i2.LoginScreen(
           key: args.key,
           redirectOnLogin: args.redirectOnLogin,
         ),
+        customRouteBuilder: _i8.cupertinoModalRouteBuilder,
+        opaque: true,
+        barrierDismissible: false,
       );
     },
     OnboardingRoute.name: (routeData) {
       final args = routeData.argsAs<OnboardingRouteArgs>();
-      return _i5.AdaptivePage<dynamic>(
+      return _i5.CustomPage<dynamic>(
         routeData: routeData,
         child: _i3.OnboardingScreen(
           key: args.key,
           redirectOnLogin: args.redirectOnLogin,
         ),
+        customRouteBuilder: _i8.cupertinoModalRouteBuilder,
+        opaque: true,
+        barrierDismissible: false,
       );
     },
     PageNotFoundRoute.name: (routeData) {
       final args = routeData.argsAs<PageNotFoundRouteArgs>();
-      return _i5.AdaptivePage<dynamic>(
+      return _i5.CustomPage<dynamic>(
         routeData: routeData,
         child: _i4.PageNotFoundScreen(
           args.routeName,
           key: args.key,
         ),
+        customRouteBuilder: _i8.cupertinoModalRouteBuilder,
+        opaque: true,
+        barrierDismissible: false,
       );
     },
   };
