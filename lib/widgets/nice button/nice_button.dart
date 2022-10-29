@@ -193,6 +193,7 @@ class _NiceButtonState extends State<NiceButton> with TickerProviderStateMixin {
         duration: 30,
       );
     }
+    await Future.delayed(const Duration(milliseconds: 100));
     widget.onTap(_finish);
   }
 
