@@ -18,21 +18,20 @@ import '../../features/app/data/controllers/app_controller.dart' as _i12;
 import '../../features/app/data/data_sources/app_local_data_source.dart' as _i3;
 import '../../features/app/data/repositories/app_repository.dart' as _i4;
 import '../../features/app/ui/store/app_store.dart' as _i13;
-import '../../features/login/data/controllers/login_controller.dart' as _i18;
+import '../../features/login/data/controllers/login_controller.dart' as _i17;
 import '../../features/login/data/data_sources/login_local_data_source.dart'
-    as _i15;
+    as _i14;
 import '../../features/login/data/data_sources/login_remote_data_source.dart'
-    as _i16;
-import '../../features/login/data/repositories/login_repository.dart' as _i17;
-import '../../features/login/ui/store/login_store.dart' as _i19;
-import '../../utils/log/log_it.dart' as _i14;
+    as _i15;
+import '../../features/login/data/repositories/login_repository.dart' as _i16;
+import '../../features/login/ui/store/login_store.dart' as _i18;
 import '../api_client/api_client.dart' as _i11;
 import '../network/network_info.dart' as _i9;
-import 'dio_di.dart' as _i21;
-import 'logger_di.dart' as _i22;
-import 'network_info_di.dart' as _i20;
+import 'dio_di.dart' as _i20;
+import 'logger_di.dart' as _i21;
+import 'network_info_di.dart' as _i19;
 import 'shared_preferences_di.dart'
-    as _i23; // ignore_for_file: unnecessary_lambdas
+    as _i22; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
 /// an extension to register the provided dependencies inside of [GetIt]
@@ -70,27 +69,26 @@ extension GetItInjectableX on _i1.GetIt {
         () => _i12.AppController(get<_i4.AppRepository>()));
     gh.lazySingleton<_i13.AppStore>(
         () => _i13.AppStore(get<_i12.AppController>()));
-    gh.lazySingleton<_i14.LogIt>(() => _i14.LogIt(get<_i8.Logger>()));
-    gh.lazySingleton<_i15.LoginLocalDataSource>(
-        () => _i15.LoginLocalDataSource(get<_i10.SharedPreferences>()));
-    gh.lazySingleton<_i16.LoginRemoteDataSource>(
-        () => _i16.LoginRemoteDataSource(get<_i11.ApiClient>()));
-    gh.lazySingleton<_i17.LoginRepository>(() => _i17.LoginRepository(
-          get<_i15.LoginLocalDataSource>(),
-          get<_i16.LoginRemoteDataSource>(),
+    gh.lazySingleton<_i14.LoginLocalDataSource>(
+        () => _i14.LoginLocalDataSource(get<_i10.SharedPreferences>()));
+    gh.lazySingleton<_i15.LoginRemoteDataSource>(
+        () => _i15.LoginRemoteDataSource(get<_i11.ApiClient>()));
+    gh.lazySingleton<_i16.LoginRepository>(() => _i16.LoginRepository(
+          get<_i14.LoginLocalDataSource>(),
+          get<_i15.LoginRemoteDataSource>(),
         ));
-    gh.lazySingleton<_i18.LoginController>(
-        () => _i18.LoginController(get<_i17.LoginRepository>()));
-    gh.lazySingleton<_i19.LoginStore>(
-        () => _i19.LoginStore(get<_i18.LoginController>()));
+    gh.lazySingleton<_i17.LoginController>(
+        () => _i17.LoginController(get<_i16.LoginRepository>()));
+    gh.lazySingleton<_i18.LoginStore>(
+        () => _i18.LoginStore(get<_i17.LoginController>()));
     return this;
   }
 }
 
-class _$NetworkInfoDi extends _i20.NetworkInfoDi {}
+class _$NetworkInfoDi extends _i19.NetworkInfoDi {}
 
-class _$DioDi extends _i21.DioDi {}
+class _$DioDi extends _i20.DioDi {}
 
-class _$LoggerDi extends _i22.LoggerDi {}
+class _$LoggerDi extends _i21.LoggerDi {}
 
-class _$SharedPreferencesDi extends _i23.SharedPreferencesDi {}
+class _$SharedPreferencesDi extends _i22.SharedPreferencesDi {}

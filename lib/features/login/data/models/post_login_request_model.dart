@@ -13,6 +13,9 @@ class PostLoginRequestModel extends Equatable {
     required this.password,
   });
 
+  factory PostLoginRequestModel.fromJson(Map<String, dynamic> json) =>
+      _$PostLoginRequestModelFromJson(json);
+
   Map<String, dynamic> toJson() => _$PostLoginRequestModelToJson(this);
 
   @override

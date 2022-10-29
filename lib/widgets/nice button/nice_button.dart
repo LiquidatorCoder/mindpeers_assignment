@@ -9,6 +9,20 @@ enum GradientOrientation {
   horizontal,
 }
 
+class NiceeButton extends StatefulWidget {
+  const NiceeButton({super.key});
+
+  @override
+  State<NiceeButton> createState() => _NiceeButtonState();
+}
+
+class _NiceeButtonState extends State<NiceeButton> {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
+
 class NiceButton extends StatefulWidget {
   final Color startColor;
   final Color endColor;
@@ -55,21 +69,17 @@ class NiceButton extends StatefulWidget {
         calculatedWidth = stretch ? double.infinity : width;
 
   @override
-  _NiceButtonState createState() => _NiceButtonState(borderThickness);
+  State<NiceButton> createState() => _NiceButtonState();
 }
 
 class _NiceButtonState extends State<NiceButton> with TickerProviderStateMixin {
-  double _borderThickness = 5;
+  double get _borderThickness => widget.borderThickness;
   double _moveMargin = 0.0;
   double _progressWidth = 0.0;
   bool _showProgress = false;
   bool _tapped = false;
   bool _processing = false;
   int _progressBarMillis = 2500;
-
-  _NiceButtonState(double borderThickness) {
-    _borderThickness = borderThickness;
-  }
 
   Widget _buildBackLayout() {
     return Container(

@@ -6,11 +6,6 @@ import 'package:mobx/mobx.dart';
 
 part 'app_store.g.dart';
 
-enum AppSettingsTypeEnum {
-  language,
-  theme,
-}
-
 @LazySingleton()
 class AppStore = AppStoreBase with _$AppStore;
 

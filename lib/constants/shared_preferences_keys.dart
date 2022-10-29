@@ -1,3 +1,3 @@
 class SharedPreferencesKeys {
-  static const String auth_token = 'auth_token';
+  static const String authToken = 'auth_token';
 }

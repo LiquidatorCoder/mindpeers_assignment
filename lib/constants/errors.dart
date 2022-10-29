@@ -1,3 +1,0 @@
-class Errors {
-  Errors._();
-}

@@ -14,26 +14,26 @@ class LoginController {
   Future<DC<Exception, PostLoginResponseModel>> postLogin(
     PostLoginRequestModel params,
   ) async {
-    final _postLoginData = await _loginRepository.postLogin(params);
+    final postLoginData = await _loginRepository.postLogin(params);
 
-    if (_postLoginData.hasError) {
+    if (postLoginData.hasError) {
       return DC.error(
-        _postLoginData.error!,
+        postLoginData.error!,
       );
     }
 
-    final _localCacheData = await _loginRepository.setDeviceAuthenticationCache(
-      AuthenticationModel(tokenId: _postLoginData.data?.tokenId),
+    final localCacheData = await _loginRepository.setDeviceAuthenticationCache(
+      AuthenticationModel(tokenId: postLoginData.data?.tokenId),
     );
 
-    if (_localCacheData.hasError) {
+    if (localCacheData.hasError) {
       return DC.error(
-        _localCacheData.error!,
+        localCacheData.error!,
       );
     }
 
     return DC.data(
-      _postLoginData.data,
+      postLoginData.data,
     );
   }
 

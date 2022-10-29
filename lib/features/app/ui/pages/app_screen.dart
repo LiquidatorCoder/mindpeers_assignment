@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:mindpeers/common/router/root_router.dart';
 import 'package:mindpeers/common/themes/colors.dart';
 import 'package:mindpeers/constants/env.dart';
-import 'package:mindpeers/constants/strings.dart';
 
 class AppScreen extends StatelessWidget {
   const AppScreen({super.key});
@@ -38,7 +37,7 @@ class AppScreen extends StatelessWidget {
         ),
         scaffoldBackgroundColor: AppColors.scaffoldBackgroundColor,
       ),
-      title: Strings.appName,
+      title: 'MindPeers',
       routeInformationParser: rootRouter.defaultRouteParser(),
       routerDelegate: AutoRouterDelegate(
         rootRouter,

@@ -1,5 +1,4 @@
 import 'package:equatable/equatable.dart';
-import 'package:mindpeers/utils/common/functs.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'authentication_model.g.dart';
@@ -12,7 +11,7 @@ class AuthenticationModel extends Equatable {
     required this.tokenId,
   });
 
-  bool get isAuthenticated => tokenId != null && isNotNullOrEmpty(tokenId);
+  bool get isAuthenticated => tokenId != null && tokenId!.isNotEmpty;
 
   factory AuthenticationModel.fromJson(Map<String, dynamic> json) =>
       _$AuthenticationModelFromJson(json);

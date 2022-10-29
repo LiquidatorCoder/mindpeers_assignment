@@ -2,7 +2,6 @@ import 'package:data_channel/data_channel.dart';
 import 'package:mindpeers/common/api_client/api_client.dart';
 import 'package:mindpeers/features/login/data/models/post_login_request_model.dart';
 import 'package:mindpeers/features/login/data/models/post_login_response_model.dart';
-import 'package:mindpeers/features/login/data/models/user_model.dart';
 import 'package:injectable/injectable.dart';
 
 @LazySingleton()

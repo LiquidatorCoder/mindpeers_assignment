@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mindpeers/common/di/di.dart' show getItInit;
 import 'package:mindpeers/features/app/ui/pages/app_screen.dart';
-import 'package:mindpeers/utils/log/log.dart';
 import 'package:injectable/injectable.dart';
 import 'package:mobx/mobx.dart';
 
@@ -25,9 +24,8 @@ Future<void> main() async {
 
   mainContext.onReactionError(
     (_, reactiion) {
-      log.error(
-        'A mobx reaction error occured.',
-        error: reactiion.errorValue!.exception,
+      debugPrint(
+        'A mobx reaction error occured.\n${reactiion.errorValue!.exception}',
       );
     },
   );
@@ -41,9 +39,8 @@ Future<void> main() async {
       (pair) async {
         final errorAndStacktrace = pair as List;
 
-        log.error(
-          'An error was captured by main.Isolate.current.addErrorListener',
-          error: errorAndStacktrace.first,
+        debugPrint(
+          'An error was captured by main.Isolate.current.addErrorListener\n${errorAndStacktrace.first}',
         );
       },
     ).sendPort,

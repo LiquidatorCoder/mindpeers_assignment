@@ -102,7 +102,7 @@ abstract class _LoginStoreBase with Store {
 
   @action
   Future<void> logout(BuildContext context, {bool? redirectToHome}) async {
-    final _redirectToHome = redirectToHome ?? true;
+    final redirectToHomeScreen = redirectToHome ?? true;
 
     final logoutData = await loginController.logout();
 
@@ -113,7 +113,7 @@ abstract class _LoginStoreBase with Store {
         }
       },
       onData: (data) {
-        if (_redirectToHome) {
+        if (redirectToHomeScreen) {
           navigateToHomeScreen(routeArgs: null);
         }
 

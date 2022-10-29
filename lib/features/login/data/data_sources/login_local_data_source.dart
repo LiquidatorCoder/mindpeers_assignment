@@ -18,26 +18,26 @@ class LoginLocalDataSource {
     try {
       final pref = sharedPreferences;
 
-      final jsonString = pref.getString(SharedPreferencesKeys.auth_token);
+      final jsonString = pref.getString(SharedPreferencesKeys.authToken);
 
-      AuthenticationModel? _authData;
-      Exception? _exception;
+      AuthenticationModel? authData;
+      Exception? exception;
 
       if (jsonString != null) {
-        _authData = AuthenticationModel.fromJson(
+        authData = AuthenticationModel.fromJson(
             json.decode(jsonString) as Map<String, dynamic>);
       } else {
-        _exception = UnauthenticatedException();
+        exception = UnauthenticatedException();
       }
 
-      if (_exception != null) {
+      if (exception != null) {
         return DC.error(
-          _exception,
+          exception,
         );
       }
 
       return DC.data(
-        _authData,
+        authData,
       );
     } on Exception {
       return DC.error(
@@ -53,7 +53,7 @@ class LoginLocalDataSource {
       final pref = sharedPreferences;
 
       await pref.setString(
-        SharedPreferencesKeys.auth_token,
+        SharedPreferencesKeys.authToken,
         json.encode(authData.toJson()),
       );
 
@@ -72,7 +72,7 @@ class LoginLocalDataSource {
       final pref = sharedPreferences;
 
       return DC.data(
-        await pref.remove(SharedPreferencesKeys.auth_token),
+        await pref.remove(SharedPreferencesKeys.authToken),
       );
     } on Exception {
       return DC.error(
