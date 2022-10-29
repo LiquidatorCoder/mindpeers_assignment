@@ -42,3 +42,37 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/
+  fonts:
+    - family: Gilroy
+      fonts:
+        - asset: assets/fonts/Gilroy-Regular.ttf
+        - asset: assets/fonts/Gilroy-RegularItalic.ttf
+          style: italic
+        - asset: assets/fonts/Gilroy-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Gilroy-BoldItalic.ttf
+          weight: 700
+          style: italic
+        - asset: assets/fonts/Gilroy-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/Gilroy-ExtraBoldItalic.ttf
+          weight: 800
+          style: italic
+        - asset: assets/fonts/Gilroy-Black.ttf
+          weight: 900
+        - asset: assets/fonts/Gilroy-BlackItalic.ttf
+          weight: 900
+          style: italic
+        - asset: assets/fonts/Gilroy-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Gilroy-MediumItalic.ttf
+          weight: 500
+        - asset: assets/fonts/Gilroy-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Gilroy-LightItalic.ttf
+          weight: 300
+        - asset: assets/fonts/Gilroy-Thin.ttf
+          weight: 100
+        - asset: assets/fonts/Gilroy-ThinItalic.ttf
+          weight: 100
+          style: italic
