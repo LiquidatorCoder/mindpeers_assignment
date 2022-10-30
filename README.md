@@ -1,16 +1,10 @@
-# mindpeers
+# MindPeers interview assignment
 
-A new Flutter project.
+## Problem statement
+To recreate the animations and UI of MindPeers Mental Strength Test flow.
 
-## Getting Started
+## Solution
 
-This project is a starting point for a Flutter application.
+### Demo
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+https://user-images.githubusercontent.com/42910433/198869187-8594c23e-3f4b-4769-8337-3b24ad7876c4.MP4
