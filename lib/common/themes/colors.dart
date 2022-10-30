@@ -4,7 +4,7 @@ import 'package:mindpeers/common/themes/hex_color.dart';
 class AppColors {
   AppColors._();
   static final Color primaryColor = HexColor('16A9B1');
-  static final Color secondaryColor = HexColor('FFB736');
+  static final Color secondaryColor = HexColor('BBCEFF');
   static final Color scaffoldBackgroundColor = HexColor('171717');
   static final Color scaffoldLightBackgroundColor = HexColor('EFEFEF');
   static final Color white = HexColor('FFFFFF');

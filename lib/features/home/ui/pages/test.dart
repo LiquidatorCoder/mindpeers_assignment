@@ -4,8 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:mindpeers/common/themes/colors.dart';
 import 'package:mindpeers/utils/common/store_helper.dart';
 import 'package:mindpeers/widget_extends/sf_widget.dart';
-import 'package:mindpeers/widgets/nice%20button/nice_button.dart';
 import 'package:mobx/mobx.dart';
+import 'package:sprung/sprung.dart';
 
 class TestScreen extends StatefulWidget {
   const TestScreen({Key? key}) : super(key: key);
@@ -42,19 +42,39 @@ class _TestScreenState extends SfWidget {
       body: Stack(
         children: [
           // bottom image
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: SvgPicture.asset(
-              'assets/images/mountain-withball.svg',
-              fit: BoxFit.cover,
-              width: MediaQuery.of(context).size.width,
+          Positioned(
+            bottom: -50,
+            child: Stack(
+              children: [
+                SvgPicture.asset(
+                  'assets/images/mountain.svg',
+                  fit: BoxFit.cover,
+                  width: MediaQuery.of(context).size.width,
+                ),
+                AnimatedPositioned(
+                  duration: const Duration(milliseconds: 2000),
+                  curve: Sprung.overDamped,
+                  bottom: 0,
+                  left: 0,
+                  child: SvgPicture.asset(
+                    'assets/images/ball.svg',
+                    fit: BoxFit.cover,
+                    width: MediaQuery.of(context).size.width,
+                  ),
+                ),
+              ],
             ),
           ),
           Positioned(
             top: 24 + MediaQuery.of(context).padding.top,
             child: SizedBox(
               width: MediaQuery.of(context).size.width,
-              child: const LinearProgressIndicator(),
+              child: LinearProgressIndicator(
+                value: 0.1,
+                backgroundColor: AppColors.white,
+                valueColor:
+                    AlwaysStoppedAnimation<Color>(AppColors.secondaryColor),
+              ),
             ),
           ),
 
@@ -80,25 +100,69 @@ class _TestScreenState extends SfWidget {
                 const SizedBox(
                   height: 48,
                 ),
-                // Elevated button
-                NiceButton(
-                  height: 60,
-                  stretch: false,
+                Container(
                   width: MediaQuery.of(context).size.width - 80,
-                  onTap: (_) {
-                    return;
-                  },
-                  startColor: AppColors.white,
-                  endColor: AppColors.white,
-                  borderColor: AppColors.primaryColor,
-                  borderRadius: 8,
-                  borderThickness: 3,
+                  decoration: BoxDecoration(
+                    color: AppColors.secondaryColor,
+                    borderRadius: BorderRadius.circular(14),
+                  ),
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 32,
+                    horizontal: 20,
+                  ),
                   child: Text(
-                    'Begin journey',
-                    style: TextStyle(
+                    'I know what my goals are and I am actively working towards them',
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.openSans(
                       color: AppColors.black,
-                      fontWeight: FontWeight.w900,
-                      fontSize: 15,
+                      fontWeight: FontWeight.normal,
+                      fontSize: 16,
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 24,
+                ),
+                Container(
+                  width: MediaQuery.of(context).size.width - 80,
+                  decoration: BoxDecoration(
+                    color: AppColors.secondaryColor,
+                    borderRadius: BorderRadius.circular(14),
+                  ),
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 32,
+                    horizontal: 20,
+                  ),
+                  child: Text(
+                    'Its getting slightly difficult to have a consistent version of what goals I want to achieve',
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.openSans(
+                      color: AppColors.black,
+                      fontWeight: FontWeight.normal,
+                      fontSize: 16,
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 24,
+                ),
+                Container(
+                  width: MediaQuery.of(context).size.width - 80,
+                  decoration: BoxDecoration(
+                    color: AppColors.secondaryColor,
+                    borderRadius: BorderRadius.circular(14),
+                  ),
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 32,
+                    horizontal: 20,
+                  ),
+                  child: Text(
+                    'I struggle alot with what I want to do and how I want to achieve it',
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.openSans(
+                      color: AppColors.black,
+                      fontWeight: FontWeight.normal,
+                      fontSize: 16,
                     ),
                   ),
                 ),
