@@ -5,6 +5,7 @@ class AppColors {
   AppColors._();
   static final Color primaryColor = HexColor('16A9B1');
   static final Color secondaryColor = HexColor('BBCEFF');
+  static final Color secondaryDarkColor = HexColor('1D409B');
   static final Color scaffoldBackgroundColor = HexColor('171717');
   static final Color scaffoldLightBackgroundColor = HexColor('EFEFEF');
   static final Color white = HexColor('FFFFFF');

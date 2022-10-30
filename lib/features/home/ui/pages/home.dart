@@ -48,10 +48,13 @@ class _HomeScreenState extends SfWidget {
               top: MediaQuery.of(context).padding.top +
                   MediaQuery.of(context).size.height * 0.1,
             ),
-            child: SvgPicture.asset(
-              'assets/images/mountain-withball.svg',
-              fit: BoxFit.cover,
-              width: MediaQuery.of(context).size.width,
+            child: Hero(
+              tag: 'mountain',
+              child: SvgPicture.asset(
+                'assets/images/mountain-withball.svg',
+                fit: BoxFit.cover,
+                width: MediaQuery.of(context).size.width,
+              ),
             ),
           ),
 
