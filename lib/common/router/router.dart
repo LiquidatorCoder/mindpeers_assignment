@@ -2,9 +2,9 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:mindpeers/common/router/router_auth_guard.dart';
 import 'package:mindpeers/features/home/ui/pages/home.dart';
-import 'package:mindpeers/features/home/ui/pages/test.dart';
 import 'package:mindpeers/features/login/ui/pages/onboarding.dart';
 import 'package:mindpeers/features/page_not_found/ui/pages/page_not_found.dart';
+import 'package:mindpeers/features/test/ui/pages/test.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
 @AdaptiveAutoRouter(

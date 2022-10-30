@@ -16,10 +16,10 @@ import 'package:flutter/material.dart' as _i6;
 import 'package:mindpeers/common/router/router.dart' as _i8;
 import 'package:mindpeers/common/router/router_auth_guard.dart' as _i7;
 import 'package:mindpeers/features/home/ui/pages/home.dart' as _i1;
-import 'package:mindpeers/features/home/ui/pages/test.dart' as _i3;
 import 'package:mindpeers/features/login/ui/pages/onboarding.dart' as _i2;
 import 'package:mindpeers/features/page_not_found/ui/pages/page_not_found.dart'
     as _i4;
+import 'package:mindpeers/features/test/ui/pages/test.dart' as _i3;
 
 class RootRouter extends _i5.RootStackRouter {
   RootRouter({
