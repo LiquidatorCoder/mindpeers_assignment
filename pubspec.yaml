@@ -28,7 +28,6 @@ dependencies:
   data_connection_checker_nulls: ^0.0.2
   json_annotation: ^4.7.0
   cached_network_image: ^3.2.2
-  pixel_perfect: ^1.1.1
   vibration: ^1.7.6
   modal_bottom_sheet: ^2.1.2
   flutter_svg: ^1.1.6
